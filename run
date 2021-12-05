@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+    foreach (glob("src/**/*.php") as $file) {
+        require $file;
+    }
+    new MatchGame\Controllers\MatchGame();
