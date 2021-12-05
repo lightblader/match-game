@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true">
+  <coverage processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">./app</directory>
+    </include>
+    <exclude>
+      <file>./app/Http/routes.php</file>
+    </exclude>
+  </coverage>
+  <testsuites>
+    <testsuite name="app">
+      <directory suffix="Test.php">./tests/app</directory>
+    </testsuite>
+    <testsuite name="worker">
+      <directory suffix="Test.php">./tests/worker</directory>
+    </testsuite>
+    <testsuite name="shared">
+      <directory suffix="Test.php">./tests/shared</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="APP_ENV" value="testing"/>
+    <env name="DB_CONNECTION" value="testing"/>
+    <env name="CACHE_DRIVER" value="array"/>
+    <env name="QUEUE_CONNECTION" value="sync"/>
+    <env name="JWT_SECRET" value="testing"/>
+    <env name="JWT_ALG" value="HS256"/>
+    <env name="JOB_SERVICE_API_KEY" value="testing"/>
+    <env name="ORDER_SERVICE_API_KEY" value="testing"/>
+    <env name="JOB_AD_LIFECYCLE_TOPIC" value="job_ads_testing"/>
+    <env name="PUBLICATION_LIFECYCLE_TOPIC" value="publications_testing"/>
+    <env name="TOP_JOB_LIFECYCLE_TOPIC" value="top_jobs_testing"/>
+    <env name="MAILJET_API_PUBLIC" value="public"/>
+    <env name="MAILJET_API_PRIVATE" value="private"/>
+  </php>
+</phpunit>

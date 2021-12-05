@@ -1,0 +1,9 @@
+/vendor
+/database/database.sqlite
+/.idea
+.env
+.phpunit.result.cache
+cghooks.lock
+.phpunit.*
+.phpstorm.meta.php
+_ide_helper.php
